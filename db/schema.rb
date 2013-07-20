@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(version: 20130719000327) do
 
   create_table "urls", force: true do |t|
-    t.string   "url"
-    t.integer  "short_url"
+    t.string   "link"
+    t.integer  "hash_code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

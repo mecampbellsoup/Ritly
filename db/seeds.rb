@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts "Adding a URL to shorten"
+Url.create [
+  {
+    link: "https://www.google.com/",
+    hash_code: 000001
+  }]
