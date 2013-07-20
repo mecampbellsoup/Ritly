@@ -1,0 +1,10 @@
+<h1>Welcome to Ritly!</h1>
+<p>So you want to shorten a URL? Enter it below!</p>
+
+<%= form_tag @url, method: "GET" do %>
+	<%= label_tag :query, "Search:" %>
+	<%= text_field_tag :query, params[:query] %>
+	<%= submit_tag "Search" %>
+<% end %>
+
+<p><%#= link_to 'Enter New Movie!', new_movie_path %></p>
