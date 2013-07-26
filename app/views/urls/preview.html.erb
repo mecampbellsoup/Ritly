@@ -1,0 +1,5 @@
+<h1>Code: <%= @url.hash_code %></h1>
+<p>This code will take you to <%= @url.link %></p>
+<%= link_to "Click Here", @url.link %> to continue
+
+<%= link_to " | Back", :back %>

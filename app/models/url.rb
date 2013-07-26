@@ -1,6 +1,4 @@
 class Url < ActiveRecord::Base
+  validates :link, :hash_code, presence: true 
 
-  def self.search_for(query)
-    Url.where("url LIKE :query OR description LIKE :query", query: "%#{query}%")
-  end
 end

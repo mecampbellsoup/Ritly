@@ -1,10 +1,25 @@
-<h1>Welcome to Ritly!</h1>
-<p>So you want to shorten a URL? Enter it below!</p>
+<h1>Here's our already-shortened links:</h1>
 
-<%= form_tag @url, method: "GET" do %>
-	<%= label_tag :query, "Search:" %>
-	<%= text_field_tag :query, params[:query] %>
-	<%= submit_tag "Search" %>
+<% if @urls.empty? %>
+<p>There are not any URLs currently in the system.</p>
 <% end %>
 
-<p><%#= link_to 'Enter New Movie!', new_movie_path %></p>
+<table>
+	<tr>
+		<th>Long URL</th>
+		<th>Short URL (the "code")</th>
+	</tr>
+
+<% @urls.each do |url| %>
+	<tr>
+		<td><%= link_to url.link, url_path(url) %></td>
+		<td><%= url.hash_code %></td>
+		<td><%= link_to 'Destroy |', url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<td><%= link_to ' Preview', preview_path(url.hash_code), method: :get %></td>
+	</tr>
+<% end %>
+</table>
+<p></p>
+<p><%= link_to "Home ", root_path %>
+   <%= link_to " |  Make new Ritly", new_url_path %>
+</p>

@@ -1,0 +1,15 @@
+<h1>Welcome to Ritly!</h1>
+<p>Ritly is a URL-shortener, kind of like Bitly.</p>
+
+<fieldset>
+
+<%= link_to (radio_button_tag(:new, method: "get")), new_url_path %>
+<%= label_tag(:new_code, "Have a URL you'd like to shorten?") %>
+<%= link_to (radio_button_tag(:old, method: "get")), urls_path %>
+<%= label_tag(:old_code, "I already shortened - let's find my existing Ritly URL!") %>
+  
+<div class="actions">
+  <%= submit_tag("Let's go!") %>
+</div>
+
+</fieldset>

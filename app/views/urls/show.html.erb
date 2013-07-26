@@ -1,2 +1,8 @@
-<h1>Url#show</h1>
-<p>Find me in app/views/url/show.html.erb</p>
+<h1><%= @url.hash_code%> is your code for <%= @url.link %></h1>
+
+<p>Direct users to <%= @full_path %></p>
+<p>
+  <%= link_to "Link... ", @url.link %>
+  <%= link_to " | Preview", preview_path(@url.hash_code) %>
+  <%= link_to " | Back", :back %>
+</p>
