@@ -1,7 +1,6 @@
 Ritly::Application.routes.draw do
   
   devise_for :users
-  get "home/index"
   root "home#index" 
   resources :urls, :only => [:create, :new, :show, :index, :destroy]
   get '/:some_totally_random_value', to: 'urls#redirector', as: :redirect
