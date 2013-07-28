@@ -1,6 +1,7 @@
 <%= form_for @url do |f| %>
   
   <fieldset>
+
     <div class="field">
       <%= f.label :link %><br>
       <%= f.url_field :link %>
@@ -14,6 +15,10 @@
     <div class="actions">
       <%= f.submit %>
     </div>
+    <div class="actions">
+      <a href="#destination"> TEST</a>
+    </div>
+
   </fieldset>
   
 <% end %>
